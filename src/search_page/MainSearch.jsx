@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Job from "./Job";
 import Sidebar from "../components/Sidebar";
 import Player from "../components/Player";
+import Navbar from "../components/Navbar";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
@@ -38,6 +39,7 @@ const MainSearch = () => {
     <>
       <Sidebar />
       <main>
+        <Navbar />
         <Row className="d-flex">
           <Col xs={10} className="mx-auto justify-content-between d-flex">
             <Form onSubmit={handleSubmit}>
@@ -46,13 +48,18 @@ const MainSearch = () => {
                 value={query}
                 onChange={handleChange}
                 placeholder="🔍 What do you want to listen to?"
-                style={{ minWidth: "380px", borderRadius: "20px" }}
+                style={{
+                  color: "white",
+                  backgroundColor: "black",
+                  minWidth: "380px",
+                  borderRadius: "20px",
+                }}
               />
             </Form>
 
             <Button
               onClick={() => navigate("/favourites")}
-              className="btn-success"
+              className="btn-dark"
             >
               Liked Songs
             </Button>

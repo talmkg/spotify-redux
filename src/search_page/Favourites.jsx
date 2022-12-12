@@ -9,6 +9,9 @@ import {
 import { HeartFill } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Player from "../components/Player";
+import Sidebar from "../components/Sidebar";
 
 const Favourites = () => {
   const favourites = useSelector((state) => state.favourite.list);
@@ -17,32 +20,41 @@ const Favourites = () => {
   const navigate = useNavigate();
 
   return (
-    <Container>
-      <Row>
-        <Col xs={10} className="mx-auto my-3">
-          <h1>Favourites</h1>
-          <Button onClick={() => navigate("/")}>Home</Button>
-        </Col>
-        <Col xs={10} className="mx-auto my-3">
-          <ListGroup>
-            {favourites.map((fav, i) => (
-              <ListGroupItem key={i} className="text-dark">
-                <HeartFill
-                  className="mr-2"
-                  onClick={() =>
-                    dispatch({
-                      type: "REMOVE_FROM_FAVOURITE",
-                      payload: fav,
-                    })
-                  }
-                />
-                <Link to={"/" + fav}>{fav}</Link>
-              </ListGroupItem>
-            ))}
-          </ListGroup>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Sidebar />
+      <main>
+        <Navbar />
+        <Row>
+          <Col xs={10} className="mx-auto my-3">
+            <h1 className="text-light">Liked Songs</h1>
+          </Col>
+          <Col xs={10} className="mx-auto my-3">
+            <ListGroup>
+              {favourites.map((fav, i) => (
+                <ListGroupItem
+                  key={i}
+                  className="bg-dark d-flex align-items-center"
+                >
+                  <div>
+                    <HeartFill
+                      className="text-success me-2"
+                      onClick={() =>
+                        dispatch({
+                          type: "REMOVE_FROM_FAVOURITE",
+                          payload: fav,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="text-light">{fav}</div>
+                </ListGroupItem>
+              ))}
+            </ListGroup>
+          </Col>
+        </Row>
+      </main>
+      <Player />
+    </>
   );
 };
 

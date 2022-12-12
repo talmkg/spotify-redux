@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <div className="navbar-custom d-none d-lg-block d-xl-block d-xxl-block">
       <ul className="navbar-nav">
@@ -87,7 +88,12 @@ const Sidebar = () => {
               className=" p-1"
               id="gradient-liked-songs"
             />
-            <div className="w-75 d-flex">Liked Songs</div>
+            <div
+              className="w-75 d-flex"
+              onClick={() => navigate("/favourites")}
+            >
+              Liked Songs
+            </div>
           </button>
         </li>
       </ul>

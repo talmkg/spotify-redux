@@ -39,7 +39,7 @@ const Job = ({ data, cover, i }) => {
               onClick={() =>
                 dispatch({
                   type: "REMOVE_FROM_FAVOURITE",
-                  payload: data.title,
+                  payload: data.title + data.artist,
                 })
               }
             />
@@ -51,7 +51,7 @@ const Job = ({ data, cover, i }) => {
               onClick={() =>
                 dispatch({
                   type: "ADD_TO_FAVOURITE",
-                  payload: data.title,
+                  payload: data.title + data.artist,
                 })
               }
             />
