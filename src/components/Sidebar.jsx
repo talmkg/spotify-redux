@@ -7,7 +7,7 @@ import {
   Heart,
   Download,
 } from "react-bootstrap-icons";
-
+import { Link, useNavigate } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="navbar-custom d-none d-lg-block d-xl-block d-xxl-block">
@@ -41,10 +41,11 @@ const Sidebar = () => {
             className="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
           >
             <Search color="white" size={20} />
+
             <div className="w-75 d-flex">
-              <a className="gotohome" href="./Search/search.html" id="search">
-                Search
-              </a>
+              <Link to={"/Search/"} id="no-deco">
+                Search{" "}
+              </Link>
             </div>
           </button>
         </li>

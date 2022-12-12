@@ -10,7 +10,6 @@ const Artist_tile = ({ id, title, name, type, cover }) => {
         <div class="card-body">
           <div class="d-flex align-items-center justify-content-between">
             <h5 class="card-title text-truncate">{title}</h5>
-            {/* <i class="fa-solid fa-play 2-xl"></i> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"

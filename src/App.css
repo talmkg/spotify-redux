@@ -72,10 +72,13 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
-
-.button-hover:hover {
+#no-deco {
+  text-decoration: none !important;
+  color: white !important;
+}
+  .button-hover:hover {
   background-color: #1a1a1a;
 }
 .card-text {
