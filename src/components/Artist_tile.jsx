@@ -17,43 +17,45 @@ const Artist_tile = ({ id, title, name, type, cover }) => {
         <div class="card-body">
           <div class="d-flex align-items-center justify-content-between">
             <h5 class="card-title text-truncate">{title}</h5>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28  "
-              fill="currentColor"
-              class="bi bi-play-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-            </svg>
-
-            {isFav ? (
-              <HeartFill
-                color="green"
-                size={22}
-                className="mr-2 my-auto hearts"
-                onClick={() =>
-                  dispatch({
-                    type: "REMOVE_FROM_FAVOURITE",
-                    payload: title,
-                  })
-                }
-              />
-            ) : (
-              <Heart
-                color="green"
-                size={22}
-                className="my-auto hearts"
-                onClick={() =>
-                  dispatch({
-                    type: "ADD_TO_FAVOURITE",
-                    payload: title,
-                  })
-                }
-              />
-            )}
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-play-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+              </svg>
+            </div>
+            <div id="top-buttons">
+              {isFav ? (
+                <HeartFill
+                  color="green"
+                  size={22}
+                  className="mr-2 my-auto bi-play-fill"
+                  onClick={() =>
+                    dispatch({
+                      type: "REMOVE_FROM_FAVOURITE",
+                      payload: title,
+                    })
+                  }
+                />
+              ) : (
+                <Heart
+                  color="green"
+                  size={22}
+                  className="my-auto bi-play-fill"
+                  onClick={() =>
+                    dispatch({
+                      type: "ADD_TO_FAVOURITE",
+                      payload: title,
+                    })
+                  }
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>

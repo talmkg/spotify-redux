@@ -1,17 +1,14 @@
-import { Col } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
+import React, { Component } from "react";
+import { BsPlayCircle } from "react-icons/bs";
 const Song_tile = ({ title, cover, preview }) => {
   const favourites = useSelector((state) => state.favourite.list);
   const dispatch = useDispatch();
   const isFav = favourites.includes(title);
-  //console logs all links.
-  const audio = new Audio(`${preview}`);
-  audio.oncanplaythrough = function () {
-    audio.play();
-  };
-  audio.loop = true;
-  audio.onended = function () {
+  let audio = new Audio(`${preview}`);
+  const start = () => {
     audio.play();
   };
 
@@ -27,10 +24,18 @@ const Song_tile = ({ title, cover, preview }) => {
           </div>
 
           <div class="col-md-8 d-flex align-items-center">
-            <Col xs={10}>
+            <Col xs={9}>
               <h5 className="card-title  mx-1 text-truncate">{title}</h5>
             </Col>
-            <Col xs={2}>
+            <Col xs={2} id="top-buttons">
+              <BsPlayCircle
+                size={30}
+                onClick={start}
+                className="text-success bi-play-fill"
+              />
+              {/* #top-buttons:hover .bi-play-fill */}
+            </Col>
+            {/* <Col xs={2}>
               <div class="card-body">
                 {isFav ? (
                   <HeartFill
@@ -58,7 +63,7 @@ const Song_tile = ({ title, cover, preview }) => {
                   />
                 )}
               </div>
-            </Col>
+            </Col> */}
           </div>
         </div>
       </div>
