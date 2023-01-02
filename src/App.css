@@ -172,7 +172,9 @@ a {
   border-radius: 5px;
   transition: 0.4s;
 }
-
+.border-none {
+  border: none !important;
+}
 .card-title {
   font-weight: 600;
 }
@@ -353,13 +355,20 @@ a {
 #gradient-liked-songs {
   border-radius: 1px;
   background-image: linear-gradient(
-    to bottom,
-    #498de5,
-    #5881f4,
-    #7a70fb,
-    #a454f9,
-    #ce12eb
+    to right bottom,
+    #3f12b7,
+    #0059cb,
+    #0074ad,
+    #00868b,
+    #7a9187
   );
+}
+#song-favourite-item {
+  transition: all 0.2s ease-in-out;
+}
+#song-favourite-item:hover {
+  background-color: #333333 !important;
+  transition: all 0.2s ease-in-out;
 }
 #nav-image {
   width: 30px;

@@ -25,12 +25,12 @@ const Job = ({ id, title, name, type, cover, i }) => {
         </Col>
 
         <Col xs={4}>{title}</Col>
-        <Col xs={3}>
+        <Col>
           <Link to={`/${title}`} className="mx-3" id="no-deco">
             {title}
           </Link>
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
           {isFav ? (
             <HeartFill
               color="green"

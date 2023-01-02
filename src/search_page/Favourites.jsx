@@ -6,7 +6,7 @@ import {
   ListGroupItem,
   Button,
 } from "react-bootstrap";
-import { HeartFill } from "react-bootstrap-icons";
+import { HeartFill, Heart } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -25,15 +25,36 @@ const Favourites = () => {
       <main>
         <Navbar />
         <Row>
-          <Col xs={10} className="mx-auto my-3">
-            <h1 className="text-light">Liked Songs</h1>
+          <Col xs={10} className="d-flex align-items-center mx-auto my-3">
+            <div className="me-3">
+              <Heart
+                color="white"
+                size={150}
+                id="gradient-liked-songs"
+                style={{ padding: "3rem" }}
+              />
+            </div>
+            <div>
+              <p className="px-1 m-0">PLAYLIST</p>
+              <h1
+                className="text-light"
+                style={{ fontSize: "80px", fontWeight: "600" }}
+              >
+                Liked Songs
+              </h1>
+            </div>
           </Col>
+          <div className="w-100">
+            <hr style={{ color: "white" }} />
+          </div>
           <Col xs={10} className="mx-auto my-3">
             <ListGroup>
               {favourites.map((fav, i) => (
                 <ListGroupItem
                   key={i}
-                  className="bg-dark d-flex align-items-center"
+                  className="bg-transparent border-none d-flex align-items-center rounded"
+                  id="song-favourite-item"
+                  style={{ fontSize: "17px" }}
                 >
                   <div>
                     <HeartFill

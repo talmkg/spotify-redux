@@ -1,12 +1,12 @@
 import "./App.css";
 import "./album.css";
-import "./album_page/album.css";
+// import "./album_page/album.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "./components/Homepage";
 import MainSearch from "./search_page/MainSearch";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Favourites from "./search_page/Favourites";
-import Album_page from "./album_page/Album_page";
+// import Album_page from "./album_page/Album_page";
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
           {/* <Route path="/favourites" element={<Favourites />} /> */}
           <Route path="/search" element={<MainSearch />} />
           <Route path="/favourites" element={<Favourites />} />
-          <Route path="/album" element={<Album_page />} />
         </Routes>
       </BrowserRouter>
     </div>

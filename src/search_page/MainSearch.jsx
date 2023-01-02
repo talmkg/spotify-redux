@@ -40,30 +40,32 @@ const MainSearch = () => {
       <Sidebar />
       <main>
         <Navbar />
-        <Row className="d-flex">
-          <Col xs={10} className="mx-auto justify-content-between d-flex">
-            <Form onSubmit={handleSubmit}>
-              <Form.Control
-                type="search"
-                value={query}
-                onChange={handleChange}
-                placeholder="🔍 What do you want to listen to?"
-                style={{
-                  color: "white",
-                  backgroundColor: "black",
+        <div className="d-flex justify-content-start">
+          <Row>
+            <Col xs={10} className=" justify-content-between d-flex">
+              <Form onSubmit={handleSubmit}>
+                <Form.Control
+                  type="search"
+                  value={query}
+                  onChange={handleChange}
+                  placeholder="🔍 What do you want to listen to?"
+                  style={{
+                    color: "white",
+                    backgroundColor: "black",
 
-                  width: "380px",
-                  borderRadius: "20px",
-                }}
-              />
-            </Form>
-          </Col>
-          <Col xs={10} className="mx-auto mb-5">
-            {jobs.map((obj, i) => (
-              <Job key={i} i={i} {...obj} cover={obj.album.cover_xl} />
-            ))}
-          </Col>
-        </Row>
+                    width: "380px",
+                    borderRadius: "20px",
+                  }}
+                />
+              </Form>
+            </Col>
+            <Col xs={10} className="mx-auto w-100 mb-5">
+              {jobs.map((obj, i) => (
+                <Job key={i} i={i} {...obj} cover={obj.album.cover_xl} />
+              ))}
+            </Col>
+          </Row>
+        </div>
       </main>
       <Player />
     </>
