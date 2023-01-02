@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
 
-const Job = ({ data, cover, i }) => {
+const Job = ({ id, title, name, type, cover, i }) => {
   const favourites = useSelector((state) => state.favourite.list);
   const dispatch = useDispatch();
 
-  const isFav = favourites.includes(data.title);
+  const isFav = favourites.includes(title);
 
   return (
     <>
@@ -24,10 +24,10 @@ const Job = ({ data, cover, i }) => {
           <img src={cover} className="w-75 h-75" />
         </Col>
 
-        <Col xs={4}>{data.title}</Col>
+        <Col xs={4}>{title}</Col>
         <Col xs={3}>
-          <Link to={`/${data.title}`} className="mx-3" id="no-deco">
-            {data.title}
+          <Link to={`/${title}`} className="mx-3" id="no-deco">
+            {title}
           </Link>
         </Col>
         <Col xs={3}>
@@ -39,7 +39,7 @@ const Job = ({ data, cover, i }) => {
               onClick={() =>
                 dispatch({
                   type: "REMOVE_FROM_FAVOURITE",
-                  payload: data.title + data.artist,
+                  payload: title,
                 })
               }
             />
@@ -51,7 +51,7 @@ const Job = ({ data, cover, i }) => {
               onClick={() =>
                 dispatch({
                   type: "ADD_TO_FAVOURITE",
-                  payload: data.title + data.artist,
+                  payload: title,
                 })
               }
             />

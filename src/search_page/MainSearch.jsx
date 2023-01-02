@@ -51,22 +51,16 @@ const MainSearch = () => {
                 style={{
                   color: "white",
                   backgroundColor: "black",
-                  minWidth: "380px",
+
+                  width: "380px",
                   borderRadius: "20px",
                 }}
               />
             </Form>
-
-            <Button
-              onClick={() => navigate("/favourites")}
-              className="btn-dark"
-            >
-              Liked Songs
-            </Button>
           </Col>
           <Col xs={10} className="mx-auto mb-5">
             {jobs.map((obj, i) => (
-              <Job key={i} i={i} data={obj} cover={obj.album.cover_xl} />
+              <Job key={i} i={i} {...obj} cover={obj.album.cover_xl} />
             ))}
           </Col>
         </Row>

@@ -30,9 +30,9 @@ const Sidebar = () => {
           >
             <House color="white" size={20} />
             <div className="w-75 d-flex">
-              <a className="gotohome" href="./index.html">
+              <Link to="/" id="link-decoration">
                 Home
-              </a>
+              </Link>
             </div>
           </button>
         </li>

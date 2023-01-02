@@ -124,6 +124,7 @@ a {
 }
 .download {
   color: #a5a5a7;
+  opacity: 0;
 }
 #rightnav {
   position: absolute;
@@ -189,9 +190,6 @@ a {
   .nav-item {
     display: none;
   }
-  .download {
-    display: none;
-  }
 }
 @media screen and (min-width: 1124px) {
   main {
@@ -220,6 +218,7 @@ a {
   .nav-item,
   .download {
     display: inline-block;
+    opacity: 1;
   }
 
   .allplaylists {
@@ -240,6 +239,9 @@ a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .download {
+    display: block;
   }
 }
 #midsidecards .card-title {
@@ -366,4 +368,7 @@ a {
 }
 .border-radius {
   border-radius: 25px !important;
+}
+#link-decoration {
+  color: #e6e7e8;
 }

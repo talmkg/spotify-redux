@@ -3,7 +3,7 @@ const Player = () => {
     <div class="container-fluid playBar d-flex justify-content-between align-items-center fixed-bottom">
       <div class="playbar d-flex align-items-center">
         <img
-          class="albumImg img-fluid lilAlb m-2"
+          class=" img-fluid lilAlb m-2"
           src="https://glastonbury.davidbowie.com/images/album_cover.png"
         />
         <div class="justify-content-between">
