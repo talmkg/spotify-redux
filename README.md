@@ -8,3 +8,6 @@ I've started this project to prove my React+Redux skills. This [project](https:/
 <img src="https://i.imgur.com/6zqSysp.png"/>
 <img src="https://i.imgur.com/RHassF7.png"/>
 </p>
+
+
+Artist/Album page was not transferred to this version as soon as it's useless re-writing of the code which is already perfectly working [here](https://github.com/talmkg/Spotify-Clone-DeezerAPI). <br/> Love <3
